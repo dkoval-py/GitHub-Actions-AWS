@@ -1,0 +1,21 @@
+name: CI-CD-Flask-S3-ElasticBeanstalk
+env:
+  EB_PACKAGE_NAME: "flask_app_${{ github.sha }}"
+  AWS_REGION_NAME: "us-east-1"
+
+on:
+  push:
+    branches: 
+      - master
+
+jobs:
+  CI-step:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone GITHUB repo
+        uses: actions/checkout@v2
+
+      - name: Create a package archive
+        run: zip -r ${{ env.EB_PACKAGE_NAME }} ./ -x *git*
+
