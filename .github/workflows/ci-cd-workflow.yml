@@ -54,7 +54,7 @@ jobs:
         
       - name: Deploy New ElasticBeanstalk Application
         run: | 
-          aws elasticbeanstalk update-environment --envinment-name ${{ env.EB_ENVIRNMENT_NAME }} \
+          aws elasticbeanstalk update-environment --environment-name ${{ env.EB_ENVIRNMENT_NAME }} \
           --version-label "Version-${{ github.sha }}"
       
       
