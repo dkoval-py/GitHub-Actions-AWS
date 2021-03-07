@@ -2,7 +2,7 @@ name: CI-CD-Flask-S3-ElasticBeanstalk
 env:
   EB_S3_BUCKET_NAME   : "koval-flask-s3"
   EB_APPLICATION_NAME : "Koval-Flask"
-  EB_ENVIRNMENT_NAME  : "Koval-Flask-Prod"
+  EB_ENVIRNMENT_NAME  : "Koval-env"
   EB_PACKAGE_NAME: "flask_app_${{ github.sha }}.zip"
   AWS_REGION_NAME: "us-east-1"
 
